@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lingesh's Portfolio</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #a678c5c9; 
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      /* height: 100vh; */
+      color: white;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    #profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    #profile img {
+      border-radius: 50%;
+      width: 150px; 
+      height: 150px; 
+      object-fit: cover; 
+      margin-bottom: 10px;
+    }
+
+    #profile h1 {
+      font-size: 2em;
+      text-align: center;
+    }
+
+    #upload-profile {
+      margin-top: 20px;
+    }
+
+    #projects {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      color: white;
+      margin-top: 20px;
+    }
+
+    .project-card {
+      width: 250px;
+      margin: 20px;
+      padding: 20px;
+      background-color: #111; 
+      color:white
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .project-card:hover {
+      transform: scale(1.05);
+    }
+
+    .project-title {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+
+    .project-description {
+      font-size: 1em;
+      line-height: 1.4;
+    }
+
+    #contact {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    #about-me {
+      width: 100%;
+      max-width: 600px;
+      padding: 20px;
+      background-color: #111;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+      margin-top: 20px;
+      text-align: center;
+    }
+    #ling{
+        margin-top: 50px;
+    }
+    .avatar {
+        
+  width: 150px;
+  height: 150px;
+  margin: 0 0 40px 0;
+  border-radius: 100%;
+  /* background-color: transparent; */
+}
+
+
+.topnav {
+    /* align-items: flex-end; */
+    width: 100%;
+    align-self: start;
+  background-color: #020225;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f3ebeb;
+  text-align: center;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: rgb(255, 255, 255);
+}
+
+
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+  display: none;
+}
+
+body {
+  font-family: 'Source Sans Pro',Helvetica Neue,Helvetica,Arial,sans-serif; 
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+#timeline {
+  display: flex;
+  background-color: #031625;
+
+  &:hover {
+    .tl-item {
+      width: 23.3333%;
+    }
+  }
+}
+
+.tl-item {
+  transform: translate3d(0, 0, 0);
+  position: relative;
+  width: 25%;
+  height: 100vh;
+  min-height: 600px;
+  color: #fff;
+  overflow: hidden;
+  transition: width 0.5s ease;
+  
+  &:before, &:after {
+    transform: translate3d(0, 0, 0);
+    content: '';
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+  }
+
+  &:after {
+    background: transparentize(#031625, 0.15);
+    opacity: 1;
+    transition: opacity 0.5s ease;
+  }
+
+  &:before {
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 75%);
+    z-index: 1;
+    opacity: 0;
+    transform: translate3d(0, 0, 0) translateY(50%);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  &:hover {
+    width: 30% !important;
+    
+    &:after {
+      opacity: 0;
+    }
+
+    &:before {
+      opacity: 1;
+      transform: translate3d(0, 0, 0) translateY(0);
+      transition: opacity 1s ease, transform 1s ease 0.25s;
+    }
+    
+    .tl-content {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.75s ease 0.5s;
+    }
+
+    .tl-bg {
+      filter: grayscale(0);
+    }
+  }
+}
+
+.tl-content {
+  transform: translate3d(0, 0, 0) translateY(25px);
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin: 0 1.618em;
+  top: 55%;
+  opacity: 0;
+  
+  h1 {
+    font-family: 'Pathway Gothic One',Helvetica Neue,Helvetica,Arial,sans-serif;
+    text-transform: uppercase;
+    color: #95c2e9;
+    font-size: 1.44rem;
+    font-weight: normal;
+  }
+}
+
+.tl-year {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 1;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  
+  p {
+    font-family: 'Pathway Gothic One',Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-size: 1.728rem;
+    line-height: 0;
+  }
+}
+
+.tl-bg {
+  transform: translate3d(0, 0, 0);
+  position: absolute;
+  width: 100%; height: 100%;
+  top: 0; left: 0;
+  background-size: cover;
+  background-position: center center;
+  transition: filter 0.5s ease;
+  filter: grayscale(100%);
+}
+
+ 
+body{
+  font-family: Helvetica, Arial, sans-serif;
+}
+.container{
+  width: 90%;
+  margin: 0 auto;
+}
+@keyframes load{
+  from {
+    width: 0%
+  }
+}
+@-webkit-keyframes load{
+  from {
+    width: 0%
+  }
+}
+@-moz-keyframes load{
+  from {
+    width: 0%
+  }
+}
+@-o-keyframes load{
+  from {
+    width: 0%
+  }
+}
+
+.bar{
+  background-color: #EEE;
+  padding: 2px;
+  border-radius: 15px;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #FFF;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+}
+.bar::before{
+  content:  attr(data-skill);
+  background-color: #f3b0ff;
+  display: inline-block;
+  padding: 5px 0 5px 10px;
+  border-radius: inherit;
+  animation: load 2s 0s;
+  -webkit-animation: load 2s 0s;
+  -moz-animation: load 2s 0s;
+  -o-animation: load 2s 0s;
+}
+
+.bar.front::before{
+  background-color: #ffcc33;
+}
+.bar.back::before{
+  background-color: #a6cfe3;
+}
+
+.bar.learning::before{
+  width: calc(20% - 10px);
+}
+.bar.basic::before{
+  width: calc(40% - 10px);
+}
+.bar.intermediate::before{
+  width: calc(60% - 10px);
+}
+.bar.advanced::before{
+  width: calc(80% - 10px);
+}
+.bar.expert::before{
+  width: calc(100% - 10px);
+}
+  </style>
+</head>
+<body>
+   
+    <div class="topnav" id="myTopnav">
+        <a href="#home" class="active">Home</a>
+       <a href="#contact">Contact</a>
+        <a href="#Blog">Blog</a>
+        <a href="#about">About</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+  <header>
+    <h1 >Lingesh</h1>
+    <p>Web Developer | Creative Thinker</p>
+  </header>
+ 
+
+  <!-- <div id="profile">
+   
+    <img src="path_to_your_profile_image.jpg" alt="Lingesh's Profile Photo">
+    <h1 id="ling">Lingesh</h1>
+    <div id="upload-profile">
+      <label for="profile-photo">Upload Profile Photo:</label>
+      <input type="file" id="profile-photo" accept="image/*" onchange="previewProfilePhoto(event)">
+    </div>
+  </div> -->
+  
+  
+ <center> <img src="profile.jpg" alt="Avatar" class="avatar"></center>
+  
+  <section id="timeline">
+  
+    <div class="tl-item">
+      
+      <div class="tl-bg" style="background-image: url(https://placeimg.com/801/801/nature)"></div>
+      
+      <div class="tl-year">
+        <p class="f2 heading--sanSerif">2020</p>
+      </div>
+  
+      <div class="tl-content">
+        <h1>10th class</h1>
+        <p>I completed my 10th class in Narayana co olympiad school which is located in Andra pradesh Nellore.I passed my 10th class with 99.6% percentage.</p>
+      </div>
+  
+    </div>
+  
+    <div class="tl-item">
+      
+      <div class="tl-bg" style="background-image: url(https://placeimg.com/802/802/nature)"></div>
+      
+      <div class="tl-year">
+        <p class="f2 heading--sanSerif">2022</p>
+      </div>
+  
+      <div class="tl-content">
+        <h1 class="f3 text--accent ttu">12th class</h1>
+        <p>I completed my 12th class at Green park international school in Namakkal TamilNadu.I passed my 12th class with 84% percentage.</p>
+      </div>
+  
+    </div>
+  
+    <div class="tl-item">
+      
+      <div class="tl-bg" style="background-image: url(https://placeimg.com/803/803/nature)"></div>
+      
+      <div class="tl-year">
+        <p class="f2 heading--sanSerif">2026</p>
+      </div>
+  
+      <div class="tl-content">
+        <h1 class="f3 text--accent ttu">UG Degree</h1>
+        <p>I studied my Ug degree(computer sciencr and engineering (Artificial intelligence & Machine Learning)) at sri krishna college of technology at coimbatore.I passed my college with cgpa of 8.5.</p>
+      </div>
+  
+    </div>
+  
+    <div class="tl-item">
+      
+      <div class="tl-bg" style="background-image: url(https://placeimg.com/800/800/nature)"></div>
+      
+      <div class="tl-year">
+        <p class="f2 heading--sanSerif">soon...</p>
+      </div>
+  
+      <div class="tl-content">
+        <h1 class="f3 text--accent ttu">Working projects</h1>
+        <p>I working many projects that you can view in my project cards.</p>
+      </div>
+  
+    </div>
+  </section>
+
+
+  <div id="projects">
+    <div class="project-card">
+      <h2 class="project-title">Personal Website</h2>
+      <p class="project-description">Designed and developed my personal portfolio website using HTML, CSS, and JavaScript.</p>
+      <a href="https://www.example.com/project1" target="_blank">Visit Website</a>
+    </div>
+
+    <div class="project-card">
+      <h2 class="project-title">Creative Blog</h2>
+      <p class="project-description">Started a blog to share creative ideas and thoughts, engaging with a growing community of readers.</p>
+      <a href="https://www.example.com/project2" target="_blank">Visit Website</a>
+    </div>
+
+    <div class="project-card">
+      <h2 class="project-title">CodePen Creations</h2>
+      <p class="project-description">Regularly contribute to the CodePen community, showcasing creative coding projects and experiments.</p>
+      <a href="https://www.example.com/project3" target="_blank">Visit Website</a>
+    </div>
+
+    <div id="projects">
+        <div class="project-card">
+          <h2 class="project-title">Professional ethics</h2>
+          <p class="project-description">Professional ethics refers to the set of moral and ethical principles that guide individuals in a particular profession. These principles help professionals make responsible decisions.</p>
+          <a href="https://www.example.com/project1" target="_blank">Visit Website</a>
+        </div>
+    
+        <div class="project-card">
+          <h2 class="project-title">Technologies Blog</h2>
+          <p class="project-description">Starting a tech blog can be an exciting venture. Here's a guide to help you set up and run a successful tech blog.</p>
+          <a href="https://www.example.com/project2" target="_blank">Visit Website</a>
+        </div>
+    
+        <div class="project-card">
+          <h2 class="project-title">future Plans</h2>
+          <p class="project-description">Autonomous Vehicles: Engineers may contribute to the development of self-driving cars, drones, and other autonomous systems. This area involves a combination of robotics, artificial intelligence, and sensor technologies</p>
+          <a href="https://www.example.com/project3" target="_blank">Visit Website</a>
+        </div>
+        <h1><center>Current Project Overview</center></h1>
+        
+        <video width="100%" height="500px" autoplay muted>
+            <source src="video1.mp4" type="video/mp4" />
+           </video>
+           
+           
+        
+           
+  
+
+  <div id="about-me">
+    <h2>About Lingesh</h2>
+    <p>
+      Hi, I'm Lingesh, a passionate web developer with a love for creating unique and engaging digital experiences. My journey involves designing and coding, turning ideas into reality. I enjoy exploring new technologies and approaches to stay ahead in the ever-evolving web landscape.
+    </p>
+    <p>
+      Some of my qualities:
+      <ul>
+        <li>Creative Thinker</li>
+        <li>Problem Solver</li>
+        <li>Team Player</li>
+        <li>Continuous Learner</li>
+        <li>Detail-Oriented</li>
+      </ul>
+    </p>
+  </div>
+
+</div>
+
+<div class="container">
+    <h1>Skill Set</h1>
+    <div class="bar learning" data-skill="TDD"></div>
+    <div class="bar back basic" data-skill="Python"></div>
+    <div class="bar back intermediate" data-skill="C#"></div>
+    <div class="bar front advanced" data-skill="CSS3"></div>
+    <div class="bar front expert" data-skill="HTML5"></div>
+
+  </div>
+
+<div id="contact">
+  <h2>Contact Information</h2>
+  <p>Email: your.email@example.com</p>
+  <p>Phone: +1 (555) 123-4567</p>
+  <p>LinkedIn: <a href="https://www.linkedin.com/in/yourlinkedinprofile" target="_blank">Your LinkedIn Profile</a></p>
+  <p>Instagram: <a href="https://www.instagram.com/yourinstaprofile" target="_blank">Your Instagram Profile</a></p>
+</div>
+
+  <script>
+    function previewProfilePhoto(event) {
+      const fileInput = event.target;
+      const files = fileInput.files;
+
+      if (files.length > 0) {
+        const reader = new FileReader();
+
+        reader.onload = function (e) {
+          const profileImg = document.querySelector('#profile img');
+          profileImg.src = e.target.result;
+        };
+
+        reader.readAsDataURL(files[0]);
+      }
+    }
+    
+  </script>
+
+</body>
+</html>
